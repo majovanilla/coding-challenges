@@ -16,11 +16,10 @@ return [0, 1].
 
 
 ## Solution
-
+```
 def two_sum(nums, target)
     index = []
     i = 0
-    
     while i < nums.length
         j = i + 1
         while j < nums.length
@@ -31,3 +30,4 @@ def two_sum(nums, target)
     end
     index
 end
+```
