@@ -1,0 +1,28 @@
+##Reverse a singly linked list.
+
+Example:
+
+Input: 1->2->3->4->5->NULL
+Output: 5->4->3->2->1->NULL
+Follow up:
+
+A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+```
+def reverse_list(head, arr = [])
+    node = ListNode.new(head)
+    
+    return arr if head.nil?
+    
+    until node.nil? 
+        node = node.next
+        puts node.val
+    end
+    
+   
+    arr << node.val
+    reverse_list(node.next, arr)
+    
+    arr
+end
+```
