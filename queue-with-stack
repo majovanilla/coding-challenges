@@ -1,0 +1,30 @@
+## Implement a Queue using two stacks. You may only use the standard push(), pop(), and peek() operations traditionally available to stacks. You do not need to implement the stack yourself (i.e. an array can be used to simulate a stack).
+
+class Queue
+
+  def initialize()
+    @s1 = [1,2,3,4,5]
+    @s2 = [6,7,8,9,0]
+    #6 7 8 9 0 5 4 3 2 1 
+    #0 9 8 7 6 5 4 3 2 1  
+  end
+
+  def enqueue(val)
+    while !@s1.empty?
+      @s2 << @s1.pop
+    end
+
+    @s2.push(val)
+
+     while !@s2.empty?
+      @s1 << @s2.pop
+    end
+  end
+
+  def dequeue
+    if size > 1
+      unshift
+    end
+  end
+
+end
